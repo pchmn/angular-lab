@@ -1,0 +1,32 @@
+<h3>Reactive form</h3>
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="firstName">First name *</label>
+    <app-input formControlName="firstName" id="firstName" placeholder="First name">
+    </app-input>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name</label>
+    <app-input formControlName="lastName" id="lastName" placeholder="Last name">
+    </app-input>
+  </div>
+  <div class="form-group">
+    <label for="">City</label>
+    <app-select-filtering formControlName="city" [items]="items" placeholderSelect="Select a city..."
+      placeholderFilter="Search a city..."></app-select-filtering>
+  </div>
+  <div class="form-group">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="active" formControlName="active" id="inlineRadio1" value="1">
+      <label class="form-check-label" for="inlineRadio1">Active</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="active" formControlName="active" id="inlineRadio2" value="2">
+      <label class="form-check-label" for="inlineRadio2">Inactive</label>
+    </div>
+    <app-input formControlName="active" id="active" [pipes]="[{pipe: activePipe}]">
+    </app-input>
+  </div>
+  <pre>{{reactiveForm.value | json}}</pre>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

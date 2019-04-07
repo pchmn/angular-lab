@@ -1,0 +1,18 @@
+<div #dropdown="ngbDropdown" ngbDropdown class="d-inline-block dropdown" autoClose="outside"
+  (openChange)="onOpenChange($event)">
+  <button type="button" class="btn btn-link" id="dropdownMenu1" [ngClass]="{'no-value-selected': !value}"
+    ngbDropdownToggle>{{value?.label || placeholderSelect}}</button>
+  <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <div class="input">
+      <input [ngModel]="filter" (ngModelChange)="onFiltering($event)" type="text" class="form-control"
+        [placeholder]="placeholderFilter">
+    </div>
+    <div class="items">
+      <a *ngFor="let item of itemsFiltered" class="dropdown-item" (click)="onSelectItem(item); dropdown.close()"
+        [ngClass]="{'active': value === item}">
+        <span>{{item.label}}</span>
+        <span>{{item.code}}</span>
+      </a>
+    </div>
+  </div>
+</div>
