@@ -1,9 +1,8 @@
-import { ActivePipe } from './../../home/active.pipe';
 import { Component, OnInit } from '@angular/core';
-import { SelectFilteringItem } from 'src/app/ui/selects/select-filtering/model/select-filtering-item';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivePipe } from '@pages/home/active.pipe';
+import { SelectFilteringItem } from '@ui/selects/select-filtering/model/select-filtering-item';
 import { FormHelper } from './helpers/form.helper';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-reactive-form',

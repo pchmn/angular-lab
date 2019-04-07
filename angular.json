@@ -29,10 +29,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/boosted/dist/js/boosted.bundle.min.js"
-            ],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {

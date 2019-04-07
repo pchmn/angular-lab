@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TabComponent } from './../tab.component';
 
 @Component({
@@ -11,11 +11,17 @@ export class HomeTabComponent implements TabComponent, OnInit {
   id: string;
   name: string;
   active = true;
-  content: string;
+  isCloseable: boolean;
+  scrollPosition = 0;
+  @Output() openNewTabEvent: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  scrollToPreviousPosition() {
+    window.scrollTo(0, this.scrollPosition);
   }
 
 }
