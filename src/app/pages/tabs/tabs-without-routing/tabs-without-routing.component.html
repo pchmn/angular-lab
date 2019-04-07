@@ -1,0 +1,15 @@
+<div class="container page">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a *ngFor="let tab of dynamicTabs" class="nav-item nav-link" [class.active]="tab.active" [id]="tab.id"
+        (click)="selectTab(tab)">{{tab.name}}</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane" style="display: block" role="tabpanel">
+      <ng-template appTabHost></ng-template>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" (click)="openTab('Home 2', '2', 'Deuxième content')">Open new tab</button>
+</div>

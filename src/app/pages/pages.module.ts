@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PrismModule } from '@ngx-prism/core';
 import { UiModule } from '../ui/ui.module';
 
 @NgModule({
@@ -8,8 +7,7 @@ import { UiModule } from '../ui/ui.module';
   exports: [
     UiModule,
     FormsModule,
-    ReactiveFormsModule,
-    PrismModule
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

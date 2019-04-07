@@ -1,6 +1,5 @@
-import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 // Lazy loading of modules (https://angular.io/guide/lazy-loading-ngmodules)
 const routes: Routes = [
@@ -11,6 +10,10 @@ const routes: Routes = [
   {
     path: 'form-examples',
     loadChildren: './pages/form-examples/form-examples.module#FormExamplesModule'
+  },
+  {
+    path: 'dynamic-tabs',
+    loadChildren: './pages/tabs/tabs.module#TabsModule'
   },
   {
     path: '',
